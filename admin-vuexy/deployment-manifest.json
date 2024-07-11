@@ -1,0 +1,7 @@
+[{
+  "app": "admin-pms",
+  "image_name": "registry.hub.docker.com/elivaas/admin-pms:07-02-2024.4",
+  "caprover_app_token_qa": "f0efe6c7b1d7420d06867bc088d11e3a09d37dcb736f0803c58ea6da851e3ce6",
+  "caprover_app_token_prod": "af3192650f299b7a71432bafe2538ebe10c3317b3e240eb86103b603b01f7e66",
+  "caprover_machine_prod": "app7"
+}]

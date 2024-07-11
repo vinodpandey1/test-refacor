@@ -1,0 +1,7 @@
+.tableMainContainer table thead tr th:first-child, .tableMainContainer table tbody tr td:first-child {
+    max-width: 60px;
+  }
+
+  .tableMainContainer table thead tr th:last-child, .tableMainContainer table tbody tr td:last-child {
+    max-width: 90px;
+  }

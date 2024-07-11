@@ -1,0 +1,39 @@
+FROM node:16-slim as build
+
+ARG NODE_ENV
+ARG REACT_APP_ADMIN_GATEWAY_URL
+ARG REACT_APP_ADMIN_IAM_APP_NAME
+ARG REACT_APP_PUBLIC_URL
+ARG CMS_SVC_MEDIA_URL
+ARG GMS_ADMIN_URL
+
+
+ENV NODE_ENV=$NODE_ENV
+ENV REACT_APP_ADMIN_GATEWAY_URL=$REACT_APP_ADMIN_GATEWAY_URL
+ENV REACT_APP_ADMIN_IAM_APP_NAME=$REACT_APP_ADMIN_IAM_APP_NAME
+ENV REACT_APP_PUBLIC_URL=$REACT_APP_PUBLIC_URL
+ENV CMS_SVC_MEDIA_URL=$CMS_SVC_MEDIA_URL
+ENV GMS_ADMIN_URL=$GMS_ADMIN_URL
+
+RUN echo "The value of REACT_APP_PUBLIC_URL is: ${REACT_APP_PUBLIC_URL}"
+RUN echo "The value of REACT_APP_ADMIN_GATEWAY_URL is: ${REACT_APP_ADMIN_GATEWAY_URL}"
+RUN echo "The value of REACT_APP_ADMIN_IAM_APP_NAME is: ${REACT_APP_ADMIN_IAM_APP_NAME}"
+
+
+WORKDIR /app
+
+COPY package.json ./
+
+#COPY yarn-lock.json ./
+RUN yarn
+COPY . .
+
+RUN yarn build
+
+FROM nginx:1.13.9-alpine
+RUN rm -rf /etc/nginx/conf.d
+RUN mkdir -p /etc/nginx/conf.d
+COPY ./default.conf /etc/nginx/conf.d/
+COPY --from=build /app/dist /usr/share/nginx/html
+
+CMD ["nginx", "-g", "daemon off;"]

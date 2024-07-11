@@ -1,0 +1,19 @@
+@import '../../styles/baseClasses.module.scss';
+
+.login_container {
+  margin: 0 auto;
+  padding: 0;
+  //   margin-top: 30px;
+  //   padding: 0 80px;
+  //   margin-bottom: 30px;
+  .login_border {
+    display: flex;
+    justify-content: center;
+    color: green;
+    .login_elements {
+      width: 300px;
+      margin: 20px;
+      height: 300px;
+    }
+  }
+}

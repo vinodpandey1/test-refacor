@@ -1,0 +1,35 @@
+.drop-area {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: left;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .image-preview {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .preview-item {
+    position: relative;
+  }
+  
+  .preview-image {
+    width: 115px;
+    height: 85px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+  .delete-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 50%;
+  }
+  

@@ -1,0 +1,13 @@
+// @import '../../global.scss';
+
+.container {
+  .link {
+    text-decoration: none;
+    color: black;
+    text-transform: capitalize;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

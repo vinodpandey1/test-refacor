@@ -1,0 +1,29 @@
+.multi-select-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .chip-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  
+  .chip-item {
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  .text-input {
+    width: 100%;
+    display: flex; /* Added */
+    flex-direction: row; /* Added */
+    align-items: center; /* Added */
+    gap: 10px; /* Added */
+  }
+  
